@@ -3,8 +3,6 @@ package com.alh.taobaodropdown;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
-import com.alh.taobaodropdown.ui.DropDownMultiPagerView;
-
 import cn.bingoogolapple.refreshlayout.BGANormalRefreshViewHolder;
 import cn.bingoogolapple.refreshlayout.BGARefreshLayout;
 import cn.bingoogolapple.refreshlayout.BGARefreshViewHolder;
@@ -37,7 +35,10 @@ public class MainActivity extends AppCompatActivity implements BGARefreshLayout.
     @Override
     public void onBGARefreshLayoutBeginRefreshing(BGARefreshLayout refreshLayout)
     {
-        new DropDownMultiPagerView(MainActivity.this).show();
+//        new DropDownMultiPagerView(MainActivity.this).show();
+
+        DropDownDialogFragment dialog = new DropDownDialogFragment();
+        dialog.show(getSupportFragmentManager(),"dialog");
         mRefreshLayout.endRefreshing();
     }
 
